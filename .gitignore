@@ -1,0 +1,4 @@
+appsushi/__pycache__/*.*
+appsushi/__init__.py
+config/__pycache__/*.*
+config/__init__.py
