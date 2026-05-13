@@ -7,3 +7,6 @@ def index(request):
 
 def productos(request):
     return render(request,'appsushi/productos.html')
+
+def miscompras(request):
+    return render(request,'appsushi/miscompras.html')
