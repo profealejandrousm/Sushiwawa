@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import date
+from .models import Producto
 
 # Create your views here.
 def index(request):
@@ -7,7 +8,13 @@ def index(request):
 
 
 def productos(request):
-    return render(request,'appsushi/productos.html')
+    productos=Producto.objects.all()
+    
+    context={
+        "productos":productos
+    }
+    
+    return render(request,'appsushi/productos.html', context)
 
 def miscompras(request):
     fecha=date.today()
