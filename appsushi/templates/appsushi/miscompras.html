@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis compras</title>
-</head>
-<body>
+{% extends "appsushi/base.html" %}
+
+{% block contenido %}
+
+<div class="container mt-2">
     <h1>Mis compras</h1>
-</body>
-</html>
+    <h3>{{fecha}}</h3>
+    <h2 class="p-2">
+        Hola {{nombre}}
+    </h2>
+    <div>
+        <ul>Días de la semana</ul>
+        {% for d in dias  %}
+            <li class="text-danger">{{d}}</li>
+        
+        
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock contenido %}
