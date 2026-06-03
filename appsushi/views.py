@@ -7,14 +7,14 @@ def index(request):
     return render(request,'appsushi/index.html')
 
 
-def productos(request):
+def menu(request):
     productos=Producto.objects.all()
     
     context={
         "productos":productos
     }
     
-    return render(request,'appsushi/productos.html', context)
+    return render(request,'appsushi/menu.html', context)
 
 def miscompras(request):
     fecha=date.today()

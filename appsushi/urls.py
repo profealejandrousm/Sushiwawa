@@ -1,9 +1,9 @@
 from django.urls import path
 from django.urls import include, path
-from .views import index, productos, miscompras
+from .views import index, menu, miscompras
 
 urlpatterns = [
     path('',index,name='index'),
-    path('productos/',productos, name='productos'),
+    path('menu/',menu, name='menu'),
     path('miscompras/', miscompras, name='miscompras' )
 ]
