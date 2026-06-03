@@ -1,0 +1,48 @@
+{% extends "appsushi/base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+<div class="container mt-2">
+    <div>
+        <h1 class="display-4">Productos</h1>
+        <p>+ agregar producto</p>
+    </div>
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod  in  productos %}
+                <tr>
+                    <td>{{prod.id}}</td>
+                    <td>{{prod.nombre_producto}}</td>
+                    <td>{{prod.descripcion}}</td>
+                    <td>{{prod.precio}}</td>
+                    <td>
+                        <a href="http://" role="button" class="btn btn-sm btn-info">Ver detalle</a>
+                        <a href="http://" role="button" class="btn btn-sm btn-warning">Modificar</a>
+                        <a href="http://" role="button" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h4>Productos totales: {{total}}</h4>
+    </div>
+
+</div>
+
+
+{% endblock contenido %}

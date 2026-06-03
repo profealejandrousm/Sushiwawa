@@ -29,3 +29,13 @@ def miscompras(request):
     
     
     return render(request,'appsushi/miscompras.html', context)
+
+def productos(request):
+    listaproductos=Producto.objects.all()
+    total=listaproductos.count()
+    
+    context={
+         "productos":listaproductos,
+         "total":total
+    }
+    return render(request,'appsushi/productos.html', context)
