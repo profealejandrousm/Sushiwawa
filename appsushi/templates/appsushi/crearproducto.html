@@ -10,7 +10,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6 shadow rounded p-5 border">
             <div><h3>Crear Producto</h3></div>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form | crispy }}
                 <button type="submit" class="btn btn-primary btn-lg">Guardar</button>

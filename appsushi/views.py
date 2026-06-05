@@ -45,7 +45,7 @@ def crearproducto(request):
     form=ProductoForm()
     
     if request.method == "POST":
-        form=ProductoForm(data=request.POST)
+        form=ProductoForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
             return redirect("productos")
