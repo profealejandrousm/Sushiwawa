@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from datetime import date
 from .models import Producto
+from .forms import ProductoForm
 
 # Create your views here.
 def index(request):
@@ -39,3 +40,22 @@ def productos(request):
          "total":total
     }
     return render(request,'appsushi/productos.html', context)
+
+def crearproducto(request):
+    form=ProductoForm()
+    
+    if request.method == "POST":
+        form=ProductoForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("productos")
+            
+        else:
+            context["form":form]
+ 
+    
+    context={
+        "form":form,
+       
+    }
+    return render(request,"appsushi/crearproducto.html", context)
