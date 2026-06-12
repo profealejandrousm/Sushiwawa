@@ -1,0 +1,28 @@
+{% extends "appsushi/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+<div class="container p-5">
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 shadow rounded p-5">
+            <div>
+                <h1>Registro de Usuario</h1>
+            </div>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form | crispy}}
+
+                <input type="submit" class="btn btn-success" value="Registrar Usuario">
+            </form>
+            
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+
+
+{% endblock contenido %}

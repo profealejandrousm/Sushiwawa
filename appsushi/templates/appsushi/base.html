@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href='{% url "index" %}'>SushiWawa</a>
+            <a class="navbar-brand px-2" href='{% url "index" %}'>SushiWawa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,6 +31,14 @@
                         <a class="nav-link" href='{% url "productos" %}'>Productos</a>
                     </li>
                 </ul>
+                <div class="ms-auto px-5">
+                    <span class="navbar-text text-light">Inicio de Sesión</span>
+                    <span class="navbar-text text-light">|</span>
+                    <span class="navbar-text text-light"><a class="text-decoration-none" href='{% url "registro_usuario" %}'>Registro</a></span>
+                </div>
+
+
+
             </div>
         </div>
     </nav>

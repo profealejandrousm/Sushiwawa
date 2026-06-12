@@ -1,12 +1,11 @@
 from django.shortcuts import redirect, render
 from datetime import date
 from .models import Producto
-from .forms import ProductoForm
+from .forms import ProductoForm, customUserCreationForm
 
 # Create your views here.
 def index(request):
     return render(request,'appsushi/index.html')
-
 
 def menu(request):
     productos=Producto.objects.all()
@@ -59,3 +58,21 @@ def crearproducto(request):
        
     }
     return render(request,"appsushi/crearproducto.html", context)
+
+def registroUsuario(request):
+    usrForm=customUserCreationForm()
+    
+    # POST
+    if request.method=="POST":
+        usrForm=customUserCreationForm(data=request.POST)
+        # FALTA ALGO
+        
+        if usrForm.is_valid():
+            usrForm.save()
+            return redirect(to="index")
+        
+    
+    context={
+        "form":usrForm
+    }
+    return render(request,'registration/registrousuario.html',context)

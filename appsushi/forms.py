@@ -1,5 +1,12 @@
 from django import forms
 from .models import Producto
+from django.contrib.auth.forms import UserCreationForm
+
+
+class customUserCreationForm(UserCreationForm):
+    pass
+
+
 
 class ProductoForm(forms.ModelForm):
     
